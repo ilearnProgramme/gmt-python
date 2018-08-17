@@ -34,7 +34,7 @@
   <link rel="stylesheet" href="../_static/style.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Installing" href="../install.html" />
+    <link rel="next" title="API Reference" href="../api/index.html" />
     <link rel="prev" title="First Steps with GMT/Python" href="first-steps.html" />
     
     <script src="../_static/require.js"></script>
@@ -86,23 +86,23 @@
               
             
             
-              <p class="caption"><span class="caption-text">Documentation</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">Tutorials</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="first-steps.html">First Steps with GMT/Python</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Plotting data points</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#Cartesian-plots">Cartesian plots</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Plotting-directly-from-a-file">Plotting directly from a file</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Making-maps-using-sample-data">Making maps using sample data</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Interactive-map-previews">Interactive map previews</a></li>
-</ul>
-</li>
-</ul>
-</li>
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../install.html">Installing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="first-steps.html">First Steps with GMT/Python</a></li>
+</ul>
+<p class="caption"><span class="caption-text">User Guide</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Plotting data points</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#Cartesian-plots">Cartesian plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Plotting-directly-from-a-file">Plotting directly from a file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Making-maps-using-sample-data">Making maps using sample data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Interactive-map-previews">Interactive map previews</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../api/index.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sphinxext.html">Sphinx Extension</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../design.html">Design</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
 </ul>
 
             
@@ -114,15 +114,17 @@
         </p>
         <ul>
             
-                <li class="toctree-l1"><a href="http://try.gmtpython.xyz"><i class="fa fa-book fa-fw"></i> Try it online!</a></li>
+                <li class="toctree-l1"><a href="http://try.gmtpython.xyz"><i class="fa fa-play fa-fw"></i> Try it online!</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt-python"><i class="fa fa-github fa-fw"></i> Source Code</a></li>
             
                 <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt-python/blob/master/CONTRIBUTING.md"><i class="fa fa-users fa-fw"></i> Contributing</a></li>
             
-                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt-python/blob/master/CODE_OF_CONDUCT.md"><i class="fa fa-gavel fa-fw"></i> Code of Conduct</a></li>
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt-python/blob/master/CODE_OF_CONDUCT.md"><i class="fa fa-book fa-fw"></i> Code of Conduct</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt-python/blob/master/LICENSE.txt"><i class="fa fa-gavel fa-fw"></i> License</a></li>
             
                 <li class="toctree-l1"><a href="https://gitter.im/GenericMappingTools/gmt-python"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
-            
-                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt-python"><i class="fa fa-github fa-fw"></i> Source Code</a></li>
             
         </ul>
     
@@ -168,8 +170,6 @@
   <ul class="wy-breadcrumbs">
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
-        
-          <li><a href="index.html">Tutorials</a> &raquo;</li>
         
       <li>Plotting data points</li>
     
@@ -384,7 +384,7 @@ div.nboutput div.output_area.stderr {
 <h1>Plotting data points<a class="headerlink" href="#Plotting-data-points" title="Permalink to this headline">¶</a></h1>
 <p>This tutorial will show you how to plot data points with GMT/Python.</p>
 <p>Start by importing the <code class="docutils literal notranslate"><span class="pre">gmt</span></code> Python package:</p>
-<div class="nbinput nblast docutils container">
+<div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [1]:
 </pre></div>
@@ -393,6 +393,17 @@ div.nboutput div.output_area.stderr {
 <span></span><span class="kn">import</span> <span class="nn">gmt</span>
 </pre></div>
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="stderr output_area docutils container">
+<div class="highlight"><pre>
+/home/travis/miniconda/envs/testing/lib/python3.6/importlib/_bootstrap.py:219: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility. Expected 96, got 88
+  return f(*args, **kwds)
+/home/travis/miniconda/envs/testing/lib/python3.6/importlib/_bootstrap.py:219: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility. Expected 96, got 88
+  return f(*args, **kwds)
+</pre></div></div>
 </div>
 <div class="section" id="Cartesian-plots">
 <h2>Cartesian plots<a class="headerlink" href="#Cartesian-plots" title="Permalink to this headline">¶</a></h2>
@@ -669,22 +680,13 @@ earthquakes.</p>
 </pre></div>
 </div>
 </div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="stderr output_area docutils container">
-<div class="highlight"><pre>
-/home/travis/miniconda3/envs/testenv/lib/python3.6/site-packages/gmt/clib/utils.py:241: FutureWarning: Method .as_matrix will be removed in a future version. Use .values instead.
-  return vector.as_matrix()
-</pre></div></div>
-</div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>Out[10]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/tutorials_plot-data-points_17_1.png" src="../_images/tutorials_plot-data-points_17_1.png" />
+<img alt="../_images/tutorials_plot-data-points_17_0.png" src="../_images/tutorials_plot-data-points_17_0.png" />
 </div>
 </div>
 <p>As before, we can map the size of the markers to the earthquake
@@ -706,22 +708,13 @@ show the differences by scaling the values using a power law.</p>
 </pre></div>
 </div>
 </div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="stderr output_area docutils container">
-<div class="highlight"><pre>
-/home/travis/miniconda3/envs/testenv/lib/python3.6/site-packages/gmt/clib/utils.py:241: FutureWarning: Method .as_matrix will be removed in a future version. Use .values instead.
-  return vector.as_matrix()
-</pre></div></div>
-</div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>Out[11]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/tutorials_plot-data-points_19_1.png" src="../_images/tutorials_plot-data-points_19_1.png" />
+<img alt="../_images/tutorials_plot-data-points_19_0.png" src="../_images/tutorials_plot-data-points_19_0.png" />
 </div>
 </div>
 <p>We can also map the colors of the markers to the depths by passing an
@@ -744,22 +737,13 @@ array to the <code class="docutils literal notranslate"><span class="pre">color<
 </pre></div>
 </div>
 </div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="stderr output_area docutils container">
-<div class="highlight"><pre>
-/home/travis/miniconda3/envs/testenv/lib/python3.6/site-packages/gmt/clib/utils.py:241: FutureWarning: Method .as_matrix will be removed in a future version. Use .values instead.
-  return vector.as_matrix()
-</pre></div></div>
-</div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>Out[12]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/tutorials_plot-data-points_21_1.png" src="../_images/tutorials_plot-data-points_21_1.png" />
+<img alt="../_images/tutorials_plot-data-points_21_0.png" src="../_images/tutorials_plot-data-points_21_0.png" />
 </div>
 </div>
 </div>
@@ -785,22 +769,13 @@ figure can be aligned with the globe.</p>
 </pre></div>
 </div>
 </div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="stderr output_area docutils container">
-<div class="highlight"><pre>
-/home/travis/miniconda3/envs/testenv/lib/python3.6/site-packages/gmt/clib/utils.py:241: FutureWarning: Method .as_matrix will be removed in a future version. Use .values instead.
-  return vector.as_matrix()
-</pre></div></div>
-</div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>Out[13]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
-<canvas id="gmt-python-t0cm292d" width="500" height="500">
+<canvas id="gmt-python-zgd8_asm" width="500" height="500">
     Your browser does not support HTML5 Canvas.
 </canvas>
 
@@ -813,7 +788,7 @@ figure can be aligned with the globe.</p>
     require(['WorldWind'],
     function (WorldWind) {
 
-        var wwd = new WorldWind.WorldWindow("gmt-python-t0cm292d");
+        var wwd = new WorldWind.WorldWindow("gmt-python-zgd8_asm");
 
         // Add an image source as layer
         var image = new Image()
@@ -858,7 +833,7 @@ figure can be aligned with the globe.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../install.html" class="btn btn-neutral float-right" title="Installing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../api/index.html" class="btn btn-neutral float-right" title="API Reference" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="first-steps.html" class="btn btn-neutral" title="First Steps with GMT/Python" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -870,8 +845,8 @@ figure can be aligned with the globe.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2017, Leonardo Uieda and Paul Wessel.
-      Last updated on Jun 14, 2018.
+        &copy; Copyright 2017-2018, Leonardo Uieda and Paul Wessel.
+      Last updated on Aug 17, 2018.
 
     </p>
   </div>
